@@ -1,5 +1,7 @@
 import * as React from "react";
+import Image from 'next/image';
 import { CardHeaderProps } from "./types";
+import next_arrow from "../images/Next_Arrow.svg"
 
 export const CardHeader: React.FC<CardHeaderProps> = ({
   title,
@@ -12,7 +14,7 @@ export const CardHeader: React.FC<CardHeaderProps> = ({
         <div className="box-border flex relative flex-col w-8" />
       )}
       {count !== undefined && (
-        <img
+        <Image
           loading="lazy"
           src={icon}
           alt={`${title} icon`}
@@ -20,11 +22,11 @@ export const CardHeader: React.FC<CardHeaderProps> = ({
         />
       )}
       <div className="my-auto font-medium">{title}</div>
-      <img
+      <Image
         loading="lazy"
         src={
           count !== undefined
-            ? "https://cdn.builder.io/api/v1/image/assets/87f8f280563842d18c1723bb4d594051/c5b69f4d7bca08e4c0bddc4eb6a592967189861b9b4860f8186aeddae379b138?apiKey=87f8f280563842d18c1723bb4d594051&"
+            ? next_arrow
             : icon
         }
         alt="Status icon"

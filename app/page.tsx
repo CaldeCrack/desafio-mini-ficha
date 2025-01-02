@@ -1,7 +1,14 @@
 import * as React from "react";
+import Image from 'next/image';
 import { SelectField } from "./components/SelectField";
 import { CardHeader } from "./components/CardHeader";
 import { PatientCard } from "./components/PatientCard";
+import checkup from "./images/Checkup.svg"
+import confirm from "./images/Confirm.svg"
+import next_arrow from "./images/Next_Arrow.svg"
+import prev_arrow from "./images/Prev_Arrow.svg"
+import cardio from "./images/Icon_Cardio.svg"
+import anestesia from "./images/Icon_Anestesia.svg"
 
 export default function Home() {
   return (
@@ -34,9 +41,9 @@ export default function Home() {
         </div>
         <div className="flex flex-row justify-between px-8 pt-5 pb-4 text-xl text-primary bg-light-grey-10">
           <div className="box-border flex relative flex-row">
-            <img
+            <Image
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/87f8f280563842d18c1723bb4d594051/e5d53a64800f272636c4ae595b7c86a0a83a4602addce2327a3a49de9da0b1fb?apiKey=87f8f280563842d18c1723bb4d594051&"
+              src={checkup}
               alt="Surgical evaluation icon"
               className="object-contain my-auto w-7 rounded-none aspect-square"
             />
@@ -59,7 +66,7 @@ export default function Home() {
               <div className="flex overflow-hidden flex-col grow mx-auto w-full h-auto text-sm font-medium text-center bg-light-red rounded-xl text-dark-gray">
                 <CardHeader
                   title="No se programa"
-                  icon="https://cdn.builder.io/api/v1/image/assets/87f8f280563842d18c1723bb4d594051/c5b69f4d7bca08e4c0bddc4eb6a592967189861b9b4860f8186aeddae379b138?apiKey=87f8f280563842d18c1723bb4d594051&"
+                  icon={next_arrow}
                 />
               </div>
             </div>
@@ -67,7 +74,7 @@ export default function Home() {
               <div className="flex overflow-hidden flex-col grow gap-8 pb-16 mx-auto w-full h-auto text-sm font-medium text-center rounded-xl bg-light-grey-10 text-dark-gray">
                 <CardHeader
                   title="Solicitudes Pendientes"
-                  icon="https://cdn.builder.io/api/v1/image/assets/87f8f280563842d18c1723bb4d594051/a10d69746837bb26df5ed13bc4fa32df527153a17ad3036a98f316e7273659e8?apiKey=87f8f280563842d18c1723bb4d594051&"
+                  icon={prev_arrow}
                   count={1}
                 />
                 <PatientCard
@@ -82,8 +89,8 @@ export default function Home() {
                   requestTime="3 días"
                   suspensions={2}
                   icons={[
-                    "https://cdn.builder.io/api/v1/image/assets/87f8f280563842d18c1723bb4d594051/a2fd3e5c1b06853f3ecee03cc55611e5185c78f1c95bb10010e6cb3e8ef95be4?apiKey=87f8f280563842d18c1723bb4d594051&",
-                    "https://cdn.builder.io/api/v1/image/assets/87f8f280563842d18c1723bb4d594051/fe9c65047af5c2eacfb35c691585a85f147c0ede82b103a6e93bd0b96ca35ec4?apiKey=87f8f280563842d18c1723bb4d594051&",
+                    cardio,
+                    anestesia,
                   ]}
                 />
               </div>
@@ -92,7 +99,7 @@ export default function Home() {
               <div className="flex overflow-hidden flex-col grow mx-auto w-full h-auto text-sm font-medium text-center bg-blue-light-10 rounded-xl text-dark-gray">
                 <CardHeader
                   title="Por Programar"
-                  icon="https://cdn.builder.io/api/v1/image/assets/87f8f280563842d18c1723bb4d594051/133fe594d8a755b4aeb346cf3d6104889270ba0a8f428fffb3692f4fabc0e5bf?apiKey=87f8f280563842d18c1723bb4d594051&"
+                  icon={next_arrow}
                 />
               </div>
             </div>
@@ -100,7 +107,7 @@ export default function Home() {
               <div className="flex overflow-hidden flex-col grow mx-auto w-full h-auto text-sm font-medium text-center bg-green-20 rounded-xl text-dark-gray">
                 <CardHeader
                   title="En Programación"
-                  icon="https://cdn.builder.io/api/v1/image/assets/87f8f280563842d18c1723bb4d594051/8799d7dfe155f832bde1826768e65968d9407f1e43438044a81ce498449c4b2a?apiKey=87f8f280563842d18c1723bb4d594051&"
+                  icon={confirm}
                 />
               </div>
             </div>

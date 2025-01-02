@@ -1,5 +1,7 @@
 import * as React from "react";
+import Image from 'next/image';
 import { SelectFieldProps } from "./types";
+import dropdown_arrow from "../images/Dropdown_Arrow.svg";
 
 export const SelectField: React.FC<SelectFieldProps> = ({
   label,
@@ -17,9 +19,9 @@ export const SelectField: React.FC<SelectFieldProps> = ({
           {placeholder}
         </div>
         <div className="flex gap-2 items-center my-auto w-6">
-          <img
+          <Image
             loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/87f8f280563842d18c1723bb4d594051/b6dd83955dfe89072e72446fcf30e8f225be58e75899321062546a271c028a9a?apiKey=87f8f280563842d18c1723bb4d594051&"
+            src={dropdown_arrow}
             alt="Dropdown arrow"
             className="object-contain my-auto w-6 aspect-square"
           />

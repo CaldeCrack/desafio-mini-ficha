@@ -1,6 +1,9 @@
 import * as React from "react";
+import Image from 'next/image';
 import { PatientCardProps } from "./types";
 import { SelectField } from "./SelectField";
+import joints_bone from "../images/Joints_Bone.svg";
+import patient_avatar from "../images/Patient_Avatar.svg";
 
 export const PatientCard: React.FC<PatientCardProps> = ({
   specialty,
@@ -22,18 +25,18 @@ export const PatientCard: React.FC<PatientCardProps> = ({
           <div className="text-base">{specialty}</div>
           <div className="text-xs">{doctor}</div>
         </div>
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/87f8f280563842d18c1723bb4d594051/67ec2979d60985deb3bb8f6a1f3cb6f14973d3df6e8a746e64666e17b33203a3?apiKey=87f8f280563842d18c1723bb4d594051&"
-          alt="Medical specialty icon"
-          className="object-contain my-auto aspect-square w-[58px]"
-        />
+		<Image
+			loading="lazy"
+			src={joints_bone}
+			alt="Medical specialty icon"
+			className="object-contain my-auto aspect-square w-[58px]"
+		/>
       </div>
       <div className="flex flex-col items-start px-4 py-3.5 w-full">
         <div className="flex gap-1 text-sm font-medium text-black">
-          <img
+          <Image
             loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/87f8f280563842d18c1723bb4d594051/2cf15a43b376c1c07588e6ce33409bc882e6b03ed984bb6c2c52d029ac64ded0?apiKey=87f8f280563842d18c1723bb4d594051&"
+            src={patient_avatar}
             alt="Patient avatar"
             className="object-contain self-start my-auto w-6 aspect-square"
           />
@@ -50,7 +53,7 @@ export const PatientCard: React.FC<PatientCardProps> = ({
         </div>
         <div className="flex gap-0.5 my-2">
           {icons.map((icon, index) => (
-            <img
+            <Image
               key={index}
               loading="lazy"
               src={icon}
