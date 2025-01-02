@@ -7,19 +7,19 @@ export const CardHeader: React.FC<CardHeaderProps> = ({
   count,
 }) => {
   return (
-    <div className="flex justify-between px-5 py-3 rounded-t-xl bg-[#ebeff5]">
+    <div className="flex justify-between px-5 py-3 rounded-t-xl bg-light-grey-20">
       {count === undefined && (
-        <div className="box-border flex relative flex-col shrink-0 w-8" />
+        <div className="box-border flex relative flex-col w-8" />
       )}
       {count !== undefined && (
         <img
           loading="lazy"
           src={icon}
           alt={`${title} icon`}
-          className="object-contain shrink-0 w-8 rounded-none aspect-square"
+          className="object-contain w-8 rounded-none aspect-square"
         />
       )}
-      <div className="grow shrink my-auto">{title}</div>
+      <div className="my-auto font-medium">{title}</div>
       <img
         loading="lazy"
         src={
@@ -28,7 +28,7 @@ export const CardHeader: React.FC<CardHeaderProps> = ({
             : icon
         }
         alt="Status icon"
-        className="object-contain shrink-0 w-8 rounded-none aspect-square"
+        className="object-contain w-8 rounded-none aspect-square"
       />
     </div>
   );

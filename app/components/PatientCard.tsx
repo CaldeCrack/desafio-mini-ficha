@@ -16,9 +16,9 @@ export const PatientCard: React.FC<PatientCardProps> = ({
   icons,
 }) => {
   return (
-    <div className="flex flex-col mx-auto w-11/12 bg-white rounded-lg border border-solid shadow-sm border-slate-400">
-      <div className="flex justify-between px-4 py-1 w-full font-semibold text-white bg-blue-800 rounded-t-md">
-        <div className="flex flex-col my-auto">
+    <div className="flex flex-col mx-auto w-11/12 bg-white rounded-lg border border-solid border-light-grey-50 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.3)]">
+      <div className="flex justify-between px-4 py-1 w-full text-white bg-primary rounded-t-md">
+        <div className="flex flex-col my-auto font-semibold">
           <div className="text-base">{specialty}</div>
           <div className="text-xs">{doctor}</div>
         </div>
@@ -26,7 +26,7 @@ export const PatientCard: React.FC<PatientCardProps> = ({
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/87f8f280563842d18c1723bb4d594051/67ec2979d60985deb3bb8f6a1f3cb6f14973d3df6e8a746e64666e17b33203a3?apiKey=87f8f280563842d18c1723bb4d594051&"
           alt="Medical specialty icon"
-          className="object-contain shrink-0 my-auto aspect-square w-[58px]"
+          className="object-contain my-auto aspect-square w-[58px]"
         />
       </div>
       <div className="flex flex-col items-start px-4 py-3.5 w-full">
@@ -35,41 +35,27 @@ export const PatientCard: React.FC<PatientCardProps> = ({
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/87f8f280563842d18c1723bb4d594051/2cf15a43b376c1c07588e6ce33409bc882e6b03ed984bb6c2c52d029ac64ded0?apiKey=87f8f280563842d18c1723bb4d594051&"
             alt="Patient avatar"
-            className="object-contain shrink-0 self-start my-auto w-6 aspect-square"
+            className="object-contain self-start my-auto w-6 aspect-square"
           />
-          <div className="text-left">
-            {patientName}
-            <br />
-            {age} años
-          </div>
+          <div className="text-left font-medium">{patientName}<br />{age} años</div>
         </div>
-        <div className="mt-2 text-xs font-semibold text-left text-black">
-          <span className="text-blue-800">Ficha médica:</span> {medicalRecord}
-          <br />
-          <span className="text-blue-800">Diagnóstico: </span>
-          {diagnosis}
-          <br />
-          <span className="text-blue-800">Intervención: </span>
-          {intervention}
-          <br />
-          <span className="text-blue-800">Evaluación preanestésica: </span>
-          {hasPreAnesthesia ? "Sí" : "No"}
-          <br />
-          <span className="text-blue-800">Tiempo de solicitud: </span>
-          {requestTime}
-          <br />
-          <span className="text-blue-800">Suspensiones: </span>
-          {suspensions}
-          <br />
+        <div className="mt-2 text-xs text-left text-black">
+          <span className="text-primary">Ficha médica:</span> {medicalRecord}<br />
+          <span className="text-primary">Diagnóstico: </span>{diagnosis}<br />
+          <span className="text-primary">Intervención: </span>{intervention}<br />
+          <span className="text-primary">Evaluación preanestésica: </span>
+		  {hasPreAnesthesia ? "Sí" : "No"}<br />
+          <span className="text-primary">Tiempo de solicitud: </span>{requestTime}<br />
+          <span className="text-primary">Suspensiones: </span>{suspensions}<br />
         </div>
-        <div className="flex gap-0.5">
+        <div className="flex gap-0.5 my-2">
           {icons.map((icon, index) => (
             <img
               key={index}
               loading="lazy"
               src={icon}
               alt={`Status icon ${index + 1}`}
-              className="object-contain shrink-0 w-6 aspect-square"
+              className="object-contain w-6 aspect-square"
             />
           ))}
         </div>

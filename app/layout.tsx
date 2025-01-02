@@ -25,7 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
 	  <head>
-	  	<link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet"></link>
+	  	<link href="https://fonts.googleapis.com/css2?family=Tilt+Warp" rel="stylesheet"></link>
+	  	<link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet"></link>
+	  	<link href="https://fonts.googleapis.com/css2?family=Overpass" rel="stylesheet"></link>
 	  </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
     </html>
